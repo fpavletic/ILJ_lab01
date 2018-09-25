@@ -1,0 +1,19 @@
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'antlr'
+
+sourceCompatibility = 1.8
+
+repositories {
+    jcenter()
+}
+
+generateGrammarSource {
+    arguments += ['-visitor']
+}
+
+dependencies {
+    antlr "org.antlr:antlr4:4.7.1"
+    testCompile 'junit:junit:4.12'
+}
